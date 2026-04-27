@@ -1,0 +1,93 @@
+{
+  "name": "Akshit Jareat",
+  "title": "AI Developer | Full Stack Developer",
+  "tagline": "Building intelligent systems and scalable web applications",
+  "profile_image": "/images/profile.jpg",
+  "education": {
+    "status": "2nd Year (Final month ongoing)",
+    "cgpa": "9.5"
+  },
+  "about": "I am a passionate developer focused on building AI-powered applications and scalable web solutions. I have strong foundations in both frontend and backend technologies, along with core computer science subjects. Currently, I am advancing my problem-solving skills in Data Structures and Algorithms.",
+  "skills": {
+    "frontend": ["HTML", "CSS", "JavaScript", "React"],
+    "backend": ["Node.js", "MongoDB", "SQL"],
+    "programming_languages": ["Python", "C", "C++", "Java"],
+    "core_subjects": [
+      "Operating Systems",
+      "Computer Organization and Architecture",
+      "Computer Networks",
+      "Machine Learning",
+      "Database Management Systems"
+    ],
+    "current_focus": ["Data Structures and Algorithms"]
+  },
+  "coding_progress": {
+    "dsa_questions_solved": 5,
+    "status": "Beginner, actively improving problem-solving skills"
+  },
+  "projects_note": "Multiple AI-based and automation projects including chatbot systems and form autofillers.",
+  "projects": [
+    {
+      "id": "01",
+      "title": "Chatbot Systems",
+      "description": "AI-powered chatbot projects focused on automation, intelligent responses, and practical user workflows.",
+      "tags": ["AI", "Chatbots", "Automation"]
+    },
+    {
+      "id": "02",
+      "title": "Form Autofillers",
+      "description": "Automation tools that reduce repetitive form entry and improve workflow speed.",
+      "tags": ["Automation", "Web", "Productivity"]
+    },
+    {
+      "id": "03",
+      "title": "AI-Based Applications",
+      "description": "Experiments and builds that combine full-stack development with machine learning concepts.",
+      "tags": ["Machine Learning", "Full Stack", "AI"]
+    }
+  ],
+  "achievements": [
+    "Participated in 4 Hackathons",
+    "Completed 1 full-night hackathon",
+    "Maintained 9.5 CGPA",
+    "Built multiple AI and automation projects"
+  ],
+  "profiles": {
+    "github": "https://github.com/akshit-jareat",
+    "linkedin": "https://in.linkedin.com/in/akshit-jareat-27per"
+  },
+  "timeline": [
+    {
+      "period": "Current",
+      "title": "Advancing DSA and Problem Solving",
+      "type": "focus",
+      "description": "Solving Data Structures and Algorithms questions as a beginner and actively building problem-solving consistency.",
+      "tags": ["DSA", "Problem Solving", "Practice"]
+    },
+    {
+      "period": "2nd Year",
+      "title": "Computer Science Foundations",
+      "type": "education",
+      "description": "Maintaining a 9.5 CGPA while studying operating systems, computer networks, machine learning, DBMS, and computer organization.",
+      "tags": ["9.5 CGPA", "Core CS", "Machine Learning"]
+    },
+    {
+      "period": "Projects",
+      "title": "AI and Automation Builder",
+      "type": "project",
+      "description": "Built multiple AI-based and automation projects, including chatbot systems and form autofillers.",
+      "tags": ["AI", "Chatbots", "Automation"]
+    },
+    {
+      "period": "Hackathons",
+      "title": "Hackathon Participant",
+      "type": "achievement",
+      "description": "Participated in 4 hackathons, including one full-night hackathon experience.",
+      "tags": ["4 Hackathons", "Full-night Hackathon", "Team Building"]
+    }
+  ],
+  "contact": {
+    "availability": "Open to AI, full-stack, and automation project collaborations",
+    "cta": "Let's build intelligent products and scalable web applications."
+  }
+}
