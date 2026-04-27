@@ -1,4 +1,4 @@
-# Alex Morgan — Portfolio
+# Akshit jareat — Portfolio
 
 A modern, dark-themed portfolio built with **Next.js 14** and **Tailwind CSS**.
 
