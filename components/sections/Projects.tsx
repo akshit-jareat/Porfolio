@@ -6,11 +6,13 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import { usePortfolioData } from "@/lib/usePortfolioData";
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 32 },
+  hidden: { opacity: 0, y: 48, scale: 0.96, rotateX: 6 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: i * 0.1 },
+    scale: 1,
+    rotateX: 0,
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: i * 0.12 },
   }),
 };
 
@@ -36,6 +38,7 @@ export default function Projects() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.25 }}
               custom={i}
+              whileHover={{ y: -10 }}
             >
               <div>
                 <p className="font-mono text-xs text-text-muted mb-5 tracking-widest">

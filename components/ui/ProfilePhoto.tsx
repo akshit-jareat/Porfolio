@@ -32,7 +32,7 @@ export default function ProfilePhoto({ name, src }: ProfilePhotoProps) {
   return (
     <div className="relative mx-auto w-full max-w-[22rem] float-slow">
       <div className="absolute -inset-4 bg-gradient-to-br from-accent-gold/30 via-pink-500/20 to-cyan-400/20 blur-3xl" />
-      <div className="relative aspect-[4/5] overflow-hidden glass-panel gradient-border shine-sweep">
+      <div className="relative aspect-[4/5] overflow-hidden glass-panel gradient-border shine-sweep pulse-glow">
         {activeImage ? (
           <Image
             src={activeImage}

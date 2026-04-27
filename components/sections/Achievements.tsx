@@ -27,10 +27,11 @@ export default function Achievements() {
               <motion.div
                 key={achievement}
                 className="group glass-panel rich-hover p-6 min-h-48 flex flex-col justify-between hover:border-border-medium transition-colors"
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 38, scale: 0.94 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true, amount: 0.35 }}
-                transition={{ duration: 0.55, delay: i * 0.08, ease: "easeOut" }}
+                transition={{ duration: 0.7, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ y: -9 }}
               >
                 <div className="w-10 h-10 border border-border-medium bg-accent-glow flex items-center justify-center text-accent-gold group-hover:border-accent-gold transition-colors">
                   <Icon size={17} />

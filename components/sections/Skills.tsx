@@ -5,11 +5,13 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import { formatSkillCategory, usePortfolioData } from "@/lib/usePortfolioData";
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 44, scale: 0.96, rotateX: 5 },
   visible: (delay: number = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] },
+    scale: 1,
+    rotateX: 0,
+    transition: { duration: 0.75, delay, ease: [0.16, 1, 0.3, 1] },
   }),
 };
 

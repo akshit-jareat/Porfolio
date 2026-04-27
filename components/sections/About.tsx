@@ -6,11 +6,12 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import { usePortfolioData } from "@/lib/usePortfolioData";
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 38, scale: 0.98 },
   visible: (delay: number = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1], delay },
+    scale: 1,
+    transition: { duration: 0.78, ease: [0.16, 1, 0.3, 1], delay },
   }),
 };
 
@@ -82,10 +83,11 @@ export default function About() {
               <motion.div
                 key={label}
                 className="glass-panel rich-hover p-6 min-h-40 flex flex-col justify-between"
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 28, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
+                transition={{ duration: 0.65, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ y: -8 }}
               >
                 <Icon className="text-accent-gold" size={18} />
                 <div>

@@ -8,19 +8,36 @@ import Projects from "@/components/sections/Projects";
 import Gallery from "@/components/sections/Gallery";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/ui/Footer";
+import ScrollProgress from "@/components/ui/ScrollProgress";
+import SectionReveal from "@/components/ui/SectionReveal";
 
 export default function Home() {
   return (
     <main className="relative">
+      <ScrollProgress />
       <Navbar />
       <Hero />
-      <About />
-      <Timeline />
-      <Skills />
-      <Achievements />
-      <Projects />
-      <Gallery />
-      <Contact />
+      <SectionReveal>
+        <About />
+      </SectionReveal>
+      <SectionReveal>
+        <Timeline />
+      </SectionReveal>
+      <SectionReveal>
+        <Skills />
+      </SectionReveal>
+      <SectionReveal>
+        <Achievements />
+      </SectionReveal>
+      <SectionReveal>
+        <Projects />
+      </SectionReveal>
+      <SectionReveal>
+        <Gallery />
+      </SectionReveal>
+      <SectionReveal>
+        <Contact />
+      </SectionReveal>
       <Footer />
     </main>
   );

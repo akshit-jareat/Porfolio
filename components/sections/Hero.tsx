@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowDownRight, Github, Linkedin } from "lucide-react";
 import { usePortfolioData } from "@/lib/usePortfolioData";
 import ProfilePhoto from "@/components/ui/ProfilePhoto";
@@ -57,7 +57,16 @@ const fadeUp = {
 };
 
 export default function Hero() {
+  const sectionRef = useRef<HTMLElement>(null);
   const { data } = usePortfolioData();
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const textY = useTransform(scrollYProgress, [0, 1], [0, 90]);
+  const photoY = useTransform(scrollYProgress, [0, 1], [0, -80]);
+  const bgY = useTransform(scrollYProgress, [0, 1], [0, 130]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.82], [1, 0.25]);
   const phrases = useMemo(
     () => (data ? [data.title, data.tagline] : [""]),
     [data]
@@ -67,10 +76,11 @@ export default function Hero() {
 
   return (
     <section
+      ref={sectionRef}
       id="hero"
       className="relative min-h-screen flex flex-col justify-center px-6 pt-20 pb-16 overflow-hidden section-shell"
     >
-      <div className="hero-background" aria-hidden="true" />
+      <motion.div className="hero-background" aria-hidden="true" style={{ y: bgY }} />
       <div className="absolute inset-0 bg-bg-primary/80" />
 
       <div
@@ -82,8 +92,11 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative max-w-6xl mx-auto w-full grid lg:grid-cols-[1.12fr_0.88fr] gap-14 lg:gap-18 items-center">
-        <div>
+      <motion.div
+        className="relative max-w-6xl mx-auto w-full grid lg:grid-cols-[1.12fr_0.88fr] gap-14 lg:gap-18 items-center"
+        style={{ opacity: heroOpacity }}
+      >
+        <motion.div style={{ y: textY }}>
           <motion.div
             className="section-label mb-6 h-5 flex items-center gap-1"
             variants={fadeUp}
@@ -170,16 +183,18 @@ export default function Hero() {
               {data?.contact.availability}
             </span>
           </motion.div>
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.94, y: 28 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ delay: 0.65, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <ProfilePhoto name={data?.name} src={data?.profile_image} />
         </motion.div>
-      </div>
+
+        <motion.div style={{ y: photoY }}>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.94, y: 28 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ delay: 0.65, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <ProfilePhoto name={data?.name} src={data?.profile_image} />
+          </motion.div>
+        </motion.div>
+      </motion.div>
 
       <motion.div
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"

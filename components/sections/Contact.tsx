@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Github, Linkedin, Send, Sparkles } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { usePortfolioData } from "@/lib/usePortfolioData";
@@ -132,7 +133,14 @@ export default function Contact() {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5 glass-panel p-6 md:p-7">
+              <motion.form
+                onSubmit={handleSubmit}
+                className="space-y-5 glass-panel rich-hover p-6 md:p-7"
+                initial={{ opacity: 0, y: 36, scale: 0.97 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, amount: 0.35 }}
+                transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+              >
                 {error && (
                   <div className="border border-red-400/30 bg-red-500/10 px-4 py-3 text-sm text-text-secondary">
                     {error}
@@ -188,7 +196,7 @@ export default function Contact() {
                 >
                   {sending ? "Sending..." : "Send Message"} <Send size={14} />
                 </button>
-              </form>
+              </motion.form>
             )}
           </div>
         </div>
